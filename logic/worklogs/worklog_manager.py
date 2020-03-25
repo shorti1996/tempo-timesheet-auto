@@ -14,7 +14,7 @@ class WorklogManager:
     def post_issues(self, issues):
         def post_issue(issue):
             if self.print_on_post:
-                print("post: " + str(issue))
+                print("post:\n" + str(issue.create_dict()))
             tempo_requests.post(api_url_worklogs, json=issue.create_dict())
 
         if not self.list_only:

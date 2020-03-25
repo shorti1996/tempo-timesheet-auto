@@ -1,0 +1,6 @@
+Adjust to your needs
+
+MAILTO="YOUR EMAIL"
+SHELL="XXX"
+0 9 * * 1-5  /XXX/virtualenv/python-tempo/3.7/bin/python /XXX/python-tempo/main.py -s -l --scheduler-message "Hello, below is your schedule for today!"
+23 23 * * 1-5 /XXX/virtualenv/python-tempo/3.7/bin/python /XXX/gustosld/python-tempo/main.py -s --scheduler-message "Hello, trying to report tasks as promised!"
