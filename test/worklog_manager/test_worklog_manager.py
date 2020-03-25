@@ -1,6 +1,7 @@
 import json
 import unittest
 from datetime import datetime
+from pathlib import Path
 from unittest.mock import MagicMock
 
 from logic.worklogs.worklog_checker import ScrumWorklogChecker
@@ -10,7 +11,7 @@ from model.worklog import WorklogPost
 
 
 def prepare_worklog_manager():
-    with open('response.json', 'r') as file:
+    with open(Path(__file__).parent / 'response.json', 'r') as file:
         response_str = file.read()
     worklog_checker = ScrumWorklogChecker()
     worklog_checker.get_worklogs = lambda: json.loads(response_str)["results"]
