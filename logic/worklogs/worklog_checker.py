@@ -13,22 +13,29 @@ class WorklogChecker:
     def filter_predicate(self):
         pass
 
+    def get_worklogs(self):
+        response = tempo_requests.get(api_url_worklogs)
+        results = json.loads(response.content)["results"]
+        return results
+
 
 class ScrumWorklogChecker(WorklogChecker):
     @property
     def filter_predicate(self):
         return lambda result: result['issue']['key'] == default_scrum_issue_key
 
-    def get_worklogs_for_week(self, anchor_time=get_current_day(), days_num=default_workweek_days):
-        response = tempo_requests.get(api_url_worklogs)
-        results = json.loads(response.content)["results"]
-        scrum_issues = filter(self.filter_predicate, results)
-        that_week_issues = [x for x in scrum_issues if x['startDate'] in get_week_days_str(anchor_time, days_num)]
-        return that_week_issues
+    def get_scrum_issues(self):
+        return filter(self.filter_predicate, self.get_worklogs())
+
+    def get_worklogs_for_multiple_days(self,
+                                       anchor_time=get_current_day(), days_num=default_workweek_days, days_str=None):
+        if days_str is None:
+            days_str = get_week_days_str(anchor_time, days_num)
+        scrum_issues = self.get_scrum_issues()
+        these_days_issues = [x for x in scrum_issues if x['startDate'] in days_str]
+        return these_days_issues
 
     def get_worklogs_for_day(self, anchor_time=get_current_day()):
-        response = tempo_requests.get(api_url_worklogs)
-        results = json.loads(response.content)["results"]
-        scrum_issues = filter(self.filter_predicate, results)
+        scrum_issues = self.get_scrum_issues()
         that_day_issue = next(iter([x for x in scrum_issues if x['startDate'] == date_to_str(anchor_time)]), None)
         return that_day_issue

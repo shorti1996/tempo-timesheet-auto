@@ -39,6 +39,14 @@ def get_week_days(time=get_current_day(), num_days=default_workweek_days):
             range(num_days)]  # - 1)]  # -1 because the start day counts as well
 
 
+def get_week_days_until_day(time=get_current_day()):
+    return get_week_days(time, days_difference_from_week_start(time))
+
+
+def days_difference_from_week_start(time=get_current_day()):
+    return (time - get_week_start(time)).days
+
+
 def get_week_days_str(time=get_current_day(), num_days=default_workweek_days):
     return date_to_str(get_week_days(time, num_days))
 
