@@ -1,6 +1,6 @@
 from dataclasses import dataclass, asdict
 
-from config.consts import default_scrum_issue_key, default_time_spent_seconds, default_start_time, default_description, \
+from config.settings import default_scrum_issue_key, default_time_spent_seconds, default_start_time, default_description, \
     default_author_account_id
 from logic.calendarer import get_current_day, date_to_str
 

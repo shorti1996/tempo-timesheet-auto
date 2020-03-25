@@ -1,0 +1,998 @@
+{
+  "self": "https://api.tempo.io/core/3/worklogs?offset=0&limit=50",
+  "metadata": {
+    "count": 40,
+    "offset": 0,
+    "limit": 50
+  },
+  "results": [
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182059",
+      "tempoWorklogId": 182059,
+      "jiraWorklogId": 211432,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-59",
+        "key": "CD-59",
+        "id": 106189
+      },
+      "timeSpentSeconds": 19800,
+      "billableSeconds": 19800,
+      "startDate": "2020-03-02",
+      "startTime": "00:00:00",
+      "description": "DEV-13974",
+      "createdAt": "2020-03-11T16:08:15Z",
+      "updatedAt": "2020-03-11T16:08:15Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182059/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182061",
+      "tempoWorklogId": 182061,
+      "jiraWorklogId": 211434,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-02",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:11:16Z",
+      "updatedAt": "2020-03-11T16:11:16Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182061/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182062",
+      "tempoWorklogId": 182062,
+      "jiraWorklogId": 211435,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 7200,
+      "billableSeconds": 7200,
+      "startDate": "2020-03-02",
+      "startTime": "00:00:00",
+      "description": "Onboarding",
+      "createdAt": "2020-03-11T16:11:46Z",
+      "updatedAt": "2020-03-11T16:11:46Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182062/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182060",
+      "tempoWorklogId": 182060,
+      "jiraWorklogId": 211433,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-59",
+        "key": "CD-59",
+        "id": 106189
+      },
+      "timeSpentSeconds": 19800,
+      "billableSeconds": 19800,
+      "startDate": "2020-03-03",
+      "startTime": "00:00:00",
+      "description": "DEV-13974",
+      "createdAt": "2020-03-11T16:10:52Z",
+      "updatedAt": "2020-03-11T16:10:52Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182060/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182063",
+      "tempoWorklogId": 182063,
+      "jiraWorklogId": 211436,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-03",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:12:13Z",
+      "updatedAt": "2020-03-11T16:12:13Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182063/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182064",
+      "tempoWorklogId": 182064,
+      "jiraWorklogId": 211437,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 7200,
+      "billableSeconds": 7200,
+      "startDate": "2020-03-03",
+      "startTime": "00:00:00",
+      "description": "Onboarding",
+      "createdAt": "2020-03-11T16:12:29Z",
+      "updatedAt": "2020-03-11T16:12:43Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182064/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182065",
+      "tempoWorklogId": 182065,
+      "jiraWorklogId": 211438,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 9000,
+      "billableSeconds": 9000,
+      "startDate": "2020-03-04",
+      "startTime": "00:00:00",
+      "description": "OTT Planning",
+      "createdAt": "2020-03-11T16:13:37Z",
+      "updatedAt": "2020-03-11T16:13:37Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182065/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182067",
+      "tempoWorklogId": 182067,
+      "jiraWorklogId": 211440,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 19800,
+      "billableSeconds": 19800,
+      "startDate": "2020-03-04",
+      "startTime": "00:00:00",
+      "description": "DEV-14813",
+      "createdAt": "2020-03-11T16:19:57Z",
+      "updatedAt": "2020-03-11T16:19:57Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182067/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182068",
+      "tempoWorklogId": 182068,
+      "jiraWorklogId": 211441,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-05",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:20:32Z",
+      "updatedAt": "2020-03-11T16:20:32Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182068/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182069",
+      "tempoWorklogId": 182069,
+      "jiraWorklogId": 211442,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-05",
+      "startTime": "00:00:00",
+      "description": "DEV-14813",
+      "createdAt": "2020-03-11T16:20:49Z",
+      "updatedAt": "2020-03-11T16:20:49Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182069/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182066",
+      "tempoWorklogId": 182066,
+      "jiraWorklogId": 211439,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 7200,
+      "billableSeconds": 7200,
+      "startDate": "2020-03-06",
+      "startTime": "00:00:00",
+      "description": "OTT Planning",
+      "createdAt": "2020-03-11T16:14:13Z",
+      "updatedAt": "2020-03-11T16:14:13Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182066/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182070",
+      "tempoWorklogId": 182070,
+      "jiraWorklogId": 211443,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 21600,
+      "billableSeconds": 21600,
+      "startDate": "2020-03-06",
+      "startTime": "00:00:00",
+      "description": "DEV-14813",
+      "createdAt": "2020-03-11T16:21:07Z",
+      "updatedAt": "2020-03-11T16:21:07Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182070/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182071",
+      "tempoWorklogId": 182071,
+      "jiraWorklogId": 211444,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-09",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:22:03Z",
+      "updatedAt": "2020-03-11T16:22:03Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182071/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182076",
+      "tempoWorklogId": 182076,
+      "jiraWorklogId": 211449,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-09",
+      "startTime": "00:00:00",
+      "description": "DEV-14814 Perform filtered content on epg + search results",
+      "createdAt": "2020-03-11T16:24:24Z",
+      "updatedAt": "2020-03-11T16:24:24Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182076/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182072",
+      "tempoWorklogId": 182072,
+      "jiraWorklogId": 211445,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-10",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:22:23Z",
+      "updatedAt": "2020-03-11T16:22:23Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182072/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182077",
+      "tempoWorklogId": 182077,
+      "jiraWorklogId": 211450,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-10",
+      "startTime": "00:00:00",
+      "description": "DEV-14814 Perform filtered content on epg + search results",
+      "createdAt": "2020-03-11T16:24:36Z",
+      "updatedAt": "2020-03-11T16:24:36Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182077/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182073",
+      "tempoWorklogId": 182073,
+      "jiraWorklogId": 211446,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-11",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:22:52Z",
+      "updatedAt": "2020-03-11T16:22:52Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182073/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182972",
+      "tempoWorklogId": 182972,
+      "jiraWorklogId": 212345,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-11",
+      "startTime": "00:00:00",
+      "description": "DEV-14814 Perform filtered content on epg + search results",
+      "createdAt": "2020-03-19T11:42:50Z",
+      "updatedAt": "2020-03-19T11:42:50Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182972/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182074",
+      "tempoWorklogId": 182074,
+      "jiraWorklogId": 211447,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-12",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:23:08Z",
+      "updatedAt": "2020-03-11T16:23:08Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182074/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182975",
+      "tempoWorklogId": 182975,
+      "jiraWorklogId": 212348,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-12",
+      "startTime": "00:00:00",
+      "description": "DEV-14849 Change remote recording feature switch logic",
+      "createdAt": "2020-03-19T11:43:25Z",
+      "updatedAt": "2020-03-19T11:43:25Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182975/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182075",
+      "tempoWorklogId": 182075,
+      "jiraWorklogId": 211448,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-13",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-11T16:23:25Z",
+      "updatedAt": "2020-03-11T16:23:25Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182075/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182978",
+      "tempoWorklogId": 182978,
+      "jiraWorklogId": 212351,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-13",
+      "startTime": "00:00:00",
+      "description": "DEV-14849 Change remote recording feature switch logic",
+      "createdAt": "2020-03-19T11:43:47Z",
+      "updatedAt": "2020-03-19T11:43:47Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182978/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182979",
+      "tempoWorklogId": 182979,
+      "jiraWorklogId": 212352,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 23400,
+      "billableSeconds": 23400,
+      "startDate": "2020-03-16",
+      "startTime": "00:00:00",
+      "description": "DEV-14849 Change remote recording feature switch logic",
+      "createdAt": "2020-03-19T11:44:15Z",
+      "updatedAt": "2020-03-19T11:44:15Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182979/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182980",
+      "tempoWorklogId": 182980,
+      "jiraWorklogId": 212353,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 3600,
+      "billableSeconds": 3600,
+      "startDate": "2020-03-16",
+      "startTime": "00:00:00",
+      "description": "DEV-14814 Perform filtered content on epg + search results",
+      "createdAt": "2020-03-19T11:44:26Z",
+      "updatedAt": "2020-03-19T11:44:26Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182980/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183313",
+      "tempoWorklogId": 183313,
+      "jiraWorklogId": 212686,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-16",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-20T17:33:18Z",
+      "updatedAt": "2020-03-20T17:33:18Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183313/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182981",
+      "tempoWorklogId": 182981,
+      "jiraWorklogId": 212354,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-17",
+      "startTime": "00:00:00",
+      "description": "DEV-14849 Change remote recording feature switch logic",
+      "createdAt": "2020-03-19T11:44:49Z",
+      "updatedAt": "2020-03-19T11:44:49Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182981/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183312",
+      "tempoWorklogId": 183312,
+      "jiraWorklogId": 212685,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-17",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-20T17:32:56Z",
+      "updatedAt": "2020-03-20T17:32:56Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183312/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182982",
+      "tempoWorklogId": 182982,
+      "jiraWorklogId": 212355,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-18",
+      "startTime": "00:00:00",
+      "description": "DEV-14851 Change offline feature switch logic",
+      "createdAt": "2020-03-19T11:45:22Z",
+      "updatedAt": "2020-03-19T11:45:45Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182982/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183311",
+      "tempoWorklogId": 183311,
+      "jiraWorklogId": 212684,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-18",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-20T17:32:29Z",
+      "updatedAt": "2020-03-20T17:32:29Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183311/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/182983",
+      "tempoWorklogId": 182983,
+      "jiraWorklogId": 212356,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-19",
+      "startTime": "00:00:00",
+      "description": "DEV-14851 Change offline feature switch logic",
+      "createdAt": "2020-03-19T11:45:59Z",
+      "updatedAt": "2020-03-19T11:45:59Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/182983/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183308",
+      "tempoWorklogId": 183308,
+      "jiraWorklogId": 212681,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-19",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-20T17:06:31Z",
+      "updatedAt": "2020-03-20T17:06:31Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183308/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183255",
+      "tempoWorklogId": 183255,
+      "jiraWorklogId": 212628,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-20",
+      "startTime": "00:00:00",
+      "description": "DEV-14946 Handle new menu slug based on user type",
+      "createdAt": "2020-03-20T13:22:24Z",
+      "updatedAt": "2020-03-20T13:22:24Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183255/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183307",
+      "tempoWorklogId": 183307,
+      "jiraWorklogId": 212680,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-20",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-20T17:00:30Z",
+      "updatedAt": "2020-03-20T17:00:30Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183307/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183531",
+      "tempoWorklogId": 183531,
+      "jiraWorklogId": 212904,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-23",
+      "startTime": "00:00:00",
+      "description": "DEV-14946 Handle new menu slug based on user type",
+      "createdAt": "2020-03-23T15:08:04Z",
+      "updatedAt": "2020-03-23T15:08:04Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183531/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183846",
+      "tempoWorklogId": 183846,
+      "jiraWorklogId": 213219,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 7200,
+      "billableSeconds": 7200,
+      "startDate": "2020-03-24",
+      "startTime": "00:00:00",
+      "description": "Planning",
+      "createdAt": "2020-03-25T08:37:20Z",
+      "updatedAt": "2020-03-25T08:37:20Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183846/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183849",
+      "tempoWorklogId": 183849,
+      "jiraWorklogId": 213222,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 21600,
+      "billableSeconds": 21600,
+      "startDate": "2020-03-24",
+      "startTime": "00:00:00",
+      "description": "DEV-14998 Investigate handling request for customer type",
+      "createdAt": "2020-03-25T08:41:42Z",
+      "updatedAt": "2020-03-25T08:41:42Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183849/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183851",
+      "tempoWorklogId": 183851,
+      "jiraWorklogId": 213224,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-72",
+        "key": "CD-72",
+        "id": 107254
+      },
+      "timeSpentSeconds": 27000,
+      "billableSeconds": 27000,
+      "startDate": "2020-03-25",
+      "startTime": "00:00:00",
+      "description": "DEV-14998 Investigate handling request for customer type",
+      "createdAt": "2020-03-25T08:54:46Z",
+      "updatedAt": "2020-03-25T08:54:46Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183851/work-attribute-values",
+        "values": []
+      }
+    },
+    {
+      "self": "https://api.tempo.io/core/3/worklogs/183905",
+      "tempoWorklogId": 183905,
+      "jiraWorklogId": 213278,
+      "issue": {
+        "self": "https://ATL_URL/rest/api/2/issue/CD-12",
+        "key": "CD-12",
+        "id": 94634
+      },
+      "timeSpentSeconds": 1800,
+      "billableSeconds": 1800,
+      "startDate": "2020-03-26",
+      "startTime": "00:00:00",
+      "description": "Daily",
+      "createdAt": "2020-03-25T12:51:42Z",
+      "updatedAt": "2020-03-25T12:51:42Z",
+      "author": {
+        "self": "https://ATL_URL/rest/api/2/user?accountId=ACC_ID",
+        "accountId": "ACC_ID",
+        "displayName": "DIS_NAME"
+      },
+      "attributes": {
+        "self": "https://api.tempo.io/core/3/worklogs/183905/work-attribute-values",
+        "values": []
+      }
+    }
+  ]
+}

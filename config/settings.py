@@ -1,6 +1,9 @@
-from config.secrets import auth_token
+from config.secrets import author_id_myself
 
-api_url = 'https://api.tempo.io/core/3/'
-api_url_worklogs = api_url + 'worklogs'
+default_scrum_issue_key = "CD-12"  # Scrum
+default_time_spent_seconds = 30 * 60
+default_start_time = "00:00:00"
+default_description = "Daily"
+default_author_account_id = author_id_myself
 
-auth_header = {'Authorization': 'Bearer ' + auth_token}
+scheduler_post_daily_if_nothing_scheduled = True

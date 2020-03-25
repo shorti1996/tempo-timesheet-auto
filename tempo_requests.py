@@ -1,6 +1,6 @@
 import requests
 
-from config.settings import auth_header
+from config.consts import auth_header
 
 
 def get(url, params=None, **kwargs):

@@ -24,19 +24,19 @@ worklog_manager = prepare_worklog_manager()
 
 class WorklogManagerTest(unittest.TestCase):
     def test_single_day_2020_03_25(self):
-        with unittest.mock.patch.object(ScrumWorklogManager, 'post_issues',
+        with unittest.mock.patch.object(worklog_manager, 'post_issues',
                                         wraps=worklog_manager.post_issues) as monkey:
             worklog_manager.fill_missing_scrum_for_day(datetime(2020, 3, 25))
             monkey.assert_called_once_with([WorklogPost.create_with_defaults('2020-03-25')])
 
     def test_single_day_2020_03_26_already_filled(self):
-        with unittest.mock.patch.object(ScrumWorklogManager, 'post_issues',
+        with unittest.mock.patch.object(worklog_manager, 'post_issues',
                                         wraps=worklog_manager.post_issues) as monkey:
             worklog_manager.fill_missing_scrum_for_day(datetime(2020, 3, 26))
             monkey.assert_called_once_with([])
 
     def test_week_2020_03_25(self):
-        with unittest.mock.patch.object(ScrumWorklogManager, 'post_issues',
+        with unittest.mock.patch.object(worklog_manager, 'post_issues',
                                         wraps=worklog_manager.post_issues) as monkey:
             worklog_manager.fill_missing_scrum_for_week(datetime(2020, 3, 25))
             monkey.assert_called_once_with([WorklogPost.create_with_defaults('2020-03-23'),
@@ -44,7 +44,7 @@ class WorklogManagerTest(unittest.TestCase):
                                             WorklogPost.create_with_defaults('2020-03-27')])
 
     def test_week_until_2020_03_25(self):
-        with unittest.mock.patch.object(ScrumWorklogManager, 'post_issues',
+        with unittest.mock.patch.object(worklog_manager, 'post_issues',
                                         wraps=worklog_manager.post_issues) as monkey:
             worklog_manager.fill_missing_scrum_for_week_until_day(datetime(2020, 3, 25))
             monkey.assert_called_once_with([WorklogPost.create_with_defaults('2020-03-23'),

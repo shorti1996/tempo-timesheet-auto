@@ -1,11 +1,13 @@
-from config.secrets import author_id_myself
+from pathlib import Path
 
-default_scrum_issue_key = "CD-12"  # Scrum
-default_time_spent_seconds = 30 * 60
-default_start_time = "00:00:00"
-default_description = "Daily"
-default_author_account_id = author_id_myself
+from config.secrets import auth_token
 
+api_url = 'https://api.tempo.io/core/3/'
+api_url_worklogs = api_url + 'worklogs'
+
+auth_header = {'Authorization': 'Bearer ' + auth_token}
+
+root_path = Path(__file__).parent.parent
+default_schedule_path = root_path / "schedule.json"
 default_date_format = "%Y-%m-%d"
-
 default_workweek_days = 5  # mon-fri
