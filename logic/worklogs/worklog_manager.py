@@ -1,7 +1,8 @@
 import tempo_requests
 from config.consts import default_workweek_days
 from config.settings import api_url_worklogs
-from logic.calendarer import get_current_day, str_to_date, get_workweek_days_str, days_difference_from_week_start, date_to_str
+from logic.calendarer import get_current_day, str_to_date, get_workweek_days_str, days_difference_from_week_start, \
+    date_to_str, is_day_workday
 from logic.worklogs.worklog_checker import ScrumWorklogChecker
 from logic.worklogs.worklog_creator import ScrumWorklogCreator
 
@@ -19,7 +20,8 @@ class ScrumWorklogManager:
         ScrumWorklogManager.post_issues(missing_issues)
 
     def fill_missing_scrum_for_day(self, time_anchor=get_current_day()):
-        self.fill_missing_scrum_for_given_days([date_to_str(time_anchor)])
+        if is_day_workday(time_anchor):
+            self.fill_missing_scrum_for_given_days([date_to_str(time_anchor)])
 
     def fill_missing_scrum_for_week(self, time_anchor=get_current_day(), days_num=default_workweek_days):
         self.fill_missing_scrum_for_given_days(get_workweek_days_str(time_anchor, days_num))
