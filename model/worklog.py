@@ -1,7 +1,8 @@
 from dataclasses import dataclass, asdict
 
-from config.consts import default_issue_key, default_time_spent_seconds, default_start_time, default_description, \
+from config.consts import default_scrum_issue_key, default_time_spent_seconds, default_start_time, default_description, \
     default_author_account_id
+from logic.calendarer import get_current_day, date_to_str
 
 
 @dataclass
@@ -15,10 +16,10 @@ class WorklogPost:
     authorAccountId: str
 
     @staticmethod
-    def create_with_defaults(start_date):
-        return WorklogPost(default_issue_key,
+    def create_with_defaults(start_date=get_current_day()):
+        return WorklogPost(default_scrum_issue_key,
                            default_time_spent_seconds,
-                           start_date,
+                           start_date if isinstance(start_date, str) else date_to_str(start_date),
                            default_start_time,
                            default_description,
                            default_author_account_id)

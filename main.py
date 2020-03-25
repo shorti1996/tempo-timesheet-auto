@@ -1,6 +1,5 @@
-import tempo_requests
-from config.settings import api_url_worklogs
-from model.worklog import WorklogPost
+from logic.worklogs.worklog_manager import ScrumWorklogManager
 
-test = WorklogPost.create_with_defaults("2020-03-16")
-response = tempo_requests.post(api_url_worklogs, json=test.create_dict())
+ScrumWorklogManager().fill_missing_scrum_for_day()
+
+y = 0
