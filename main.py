@@ -12,7 +12,7 @@ parser.add_argument('-l', '--list', action='store_const', const=True,
 parser.add_argument('-s', '--scheduler', action='store_const', const=True,
                     help='if used, the script will be in a scheduler mode, which means it reads schedule.json for a specified day and reports issues '
                          'from that schedule instead of just reporting the daily for that day')
-parser.add_argument('--scheduler-message', type=str, nargs=1, default=['Hello, below is your schedule for today!'],
+parser.add_argument('--scheduler-message', type=str, nargs=1,
                     help='if in scheduler mode, this message will be printed')
 parser.add_argument('-a', '--action', choices=['day', 'week', 'week-until-today'], default='day',
                     help='choose which action you want to perform (default: fill for today)')
@@ -22,7 +22,7 @@ scheduler_mode = bool(args.scheduler)
 day = str_to_date(args.day[0])
 
 if scheduler_mode:
-    if len(args.scheduler_message[0]) > 0:
+    if args.scheduler_message and len(args.scheduler_message[0]) > 0:
         print(args.scheduler_message[0])
     scheduler = Scheduler()
     scheduler.load_schedule_from_file()
