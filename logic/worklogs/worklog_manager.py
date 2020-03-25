@@ -14,6 +14,7 @@ class ScrumWorklogManager:
     def fill_missing_scrum_for_given_days(self, days_str):
         issues_for_these_days = self.worklog_checker.get_worklogs_for_multiple_days(days_str=days_str)
         missing_days = [day for day in days_str if day not in [issue['startDate'] for issue in issues_for_these_days]]
+        print("MISSING:\n" + str(missing_days))
         missing_issues = [self.worklog_creator.create_worklog_for_day(str_to_date(day)) for day in missing_days]
         ScrumWorklogManager.post_issues(missing_issues)
 
@@ -36,3 +37,4 @@ class ScrumWorklogManager:
             [post_issue(issue) for issue in issues]
         else:
             post_issue(issues)
+        print("post_issues: OK")
