@@ -1,5 +1,5 @@
-import tempo_requests
-from config.consts import api_url_worklogs, default_workweek_days
+from api_web import tempo_requests
+from config.consts import tempo_api_url_worklogs, default_workweek_days
 from logic.calendarer import get_current_day, str_to_date, get_workweek_days_str, days_difference_from_week_start, \
     date_to_str, is_day_workday
 from logic.worklogs.worklog_checker import ScrumWorklogChecker
@@ -15,7 +15,7 @@ class WorklogManager:
         def post_issue(issue):
             if self.print_on_post:
                 print("post:\n" + str(issue.create_dict()))
-            tempo_requests.post(api_url_worklogs, json=issue.create_dict())
+            tempo_requests.post(tempo_api_url_worklogs, json=issue.create_dict())
 
         if not self.list_only:
             if isinstance(issues, list):

@@ -1,6 +1,5 @@
 import datetime
 from datetime import timedelta
-from time import strptime
 
 from config.consts import default_date_format, default_workweek_days
 
@@ -61,3 +60,11 @@ def get_workweek_days_str(time=get_current_day(), days_in_workweek=default_workw
 
 def is_day_workday(time=get_current_day(), days_in_workweek=default_workweek_days):
     return date_to_str(time) in date_to_str(get_workweek_days(time, days_in_workweek))
+
+
+def get_months_last_day(time=get_current_day()) -> datetime.datetime.date:
+    # Guaranteed to get the next month. Force time to 28th and then add 4 days.
+    next_month = time.replace(day=28) + datetime.timedelta(days=4)
+    # Subtract all days that are over since the start of the month.
+    last_day_of_month = next_month - datetime.timedelta(days=next_month.day)
+    return last_day_of_month

@@ -1,5 +1,6 @@
 import argparse
 
+from logic.atlassian.issuer import Issuer
 from logic.calendarer import get_current_day_string, str_to_date
 from logic.scheduler.scheduler import Scheduler
 from logic.worklogs.worklog_manager import ScrumWorklogManager, WorklogManager
@@ -16,12 +17,21 @@ parser.add_argument('--scheduler-message', type=str, nargs=1,
                     help='if in scheduler mode, this message will be printed')
 parser.add_argument('-a', '--action', choices=['day', 'week', 'week-until-today'], default='day',
                     help='choose which action you want to perform (default: fill for today)')
+parser.add_argument('-r', '--report', action='store_const', const=True,
+                    help='if used, the script tries to produce a report instead of reporting worklogs')
 
 args = parser.parse_args()
 scheduler_mode = bool(args.scheduler)
+report_mode = bool(args.report)
 day = str_to_date(args.day[0])
 
-if scheduler_mode:
+if scheduler_mode and report_mode:
+    print("Wrong parameters. Cannot use --report and --scheduler simultaneously.")
+    exit(-1)
+
+if report_mode:
+    Issuer.get_issue('CD-12')
+elif scheduler_mode:
     if args.scheduler_message and len(args.scheduler_message[0]) > 0:
         print(args.scheduler_message[0])
     scheduler = Scheduler()
