@@ -62,9 +62,17 @@ def is_day_workday(time=get_current_day(), days_in_workweek=default_workweek_day
     return date_to_str(time) in date_to_str(get_workweek_days(time, days_in_workweek))
 
 
-def get_months_last_day(time=get_current_day()) -> datetime.datetime.date:
+def get_months_first_day(time: datetime.date = get_current_day()) -> datetime.datetime.date:
+    return time.replace(day=1)
+
+
+def get_months_last_day(time: datetime.date = get_current_day()) -> datetime.datetime.date:
     # Guaranteed to get the next month. Force time to 28th and then add 4 days.
     next_month = time.replace(day=28) + datetime.timedelta(days=4)
     # Subtract all days that are over since the start of the month.
     last_day_of_month = next_month - datetime.timedelta(days=next_month.day)
     return last_day_of_month
+
+
+def get_months_number(time: datetime.date = get_current_day()) -> int:
+    return time.month

@@ -14,3 +14,10 @@ default_workweek_days = 5  # mon-fri
 
 atlassian_api_url = 'https://jojomobile.atlassian.net/rest/api/2/'
 atlassian_api_url_issue = atlassian_api_url + 'issue/'
+
+# REPORTS
+pivot_table_hours_header = "Godziny"
+pivot_table_projects_header = "Projekty"
+pivot_table_tasks_header = "Zadania"
+pivot_table_total_name = "Suma końcowa"
+order_number_template = '1/ Better Software Group S.A. - B/2020/%02d/01/%s'

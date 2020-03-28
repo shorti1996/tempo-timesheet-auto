@@ -1,0 +1,181 @@
+\listfiles
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{adjustbox}
+\usepackage[table]{xcolor}
+% \usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    top=40mm,
+    bottom=40mm,
+    left=20mm,
+    right=20mm,
+    headheight=50pt,
+    headsep=40pt,
+}
+\usepackage{array,etoolbox}
+\preto\tabular{\setcounter{magicrownumbers}{0}}
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+
+\pagestyle{fancy}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[R]{
+    \begin{minipage}{0.2\textwidth}\includegraphics[width=5cm]{bsg-logo.jpg}\end{minipage}
+}
+\fancyhead[L]{
+    \noindent\makebox[\textwidth][r]{
+        \rule{0.9\paperwidth}{0.3pt}
+    }
+}
+\fancyfoot[L]{
+    \footnotesize \textbf{BETTER SOFTWARE GROUP S. A.} \bsgpipe Komandorska 12 Street \bsgpipe 50-022 Wroclaw \\
+    \footnotesize +48 795 94 58 70 \bsgpipe office@bsgroup.eu \bsgpipe www.bsgroup.eu
+}
+
+\titleformat
+{\section} % command
+[block] % shape
+{\bfseries\Large\normalfont} % format
+{\thesection } % label
+{0.5ex} % sep
+{
+    \centering
+    \uppercase
+} % before-code
+
+\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+\newcommand{\bsgpipe}{
+    \textbf{\textcolor{red}{|}}
+}
+
+\newcommand{\rowspace}{
+    \begin{minipage}[c][2em][t]{0pt}\end{minipage}
+}
+
+\newcommand{\VAR}[1]{
+    \textbf{\textcolor{red}{#1}}
+}
+
+\begin{document}
+    \section*{Zamówienie usługi}
+    \begin{adjustbox}{width=1\textwidth,center}
+        \begin{tabular}{ |>{\columncolor[gray]{0.8}}l|l| }
+            \hline
+            \rowspace\rownumber\space TERMIN ZAMÓWIENIA & Od \VAR{periodfrom} do  \VAR{periodto} \\
+            \hline
+            \rowspace\rownumber\space NAZWA KONTRAHENTA & \VAR{contractor} (NIP: \VAR{nip}) \\
+            \hline
+            \rowspace\rownumber\space NUMER ZAMÓWIENIA & \VAR{ordernumber} \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+
+    \vspace{2em}
+    \begin{adjustbox}{width=1\textwidth,center}
+        \begin{tabular}{ |l| }
+            \hline
+            \rowcolor[gray]{0.8}\rowspace\centerline{ZAKRES ZAMÓWIENIA} \\
+            \hline
+            \Gape[1em]{\shortstack[l]{Zleceniodawca zleca wykonywanie prac programistycznych dla następujących klientów i projektów: \\
+                \rowspace
+                \begin{minipage}[t]{\textwidth}
+                    \begin{itemize}
+                        %% for x in orderscope
+                        \item \VAR{x}
+                        %% endfor
+                    \end{itemize}
+                \end{minipage}
+            }} \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+
+    \begin{table}[!htbp]
+        \centering%
+        \begin{tabularx}{\linewidth}{|X|}
+            \hline
+            \rowcolor[gray]{0.8}\rowspace\centerline{PŁATNOŚCI I DODATKOWE KOSZTY PROJEKTOWE} \\
+            \hline
+            \Gape[1em]{\shortstack[l]{Należna kwota za cały okres rozliczeniowy przysługująca Zleceniobiorcy po zatwierdzeniu wykonanych prac \\ przez Project Managera – \\ \centerline{\VAR{netamountdue} zł netto}}} \\
+            \hline
+        \end{tabularx}
+    \end{table}
+
+    \vspace*{\fill}
+    \begin{table}[!htbp]
+        \centering%
+        \begin{tabularx}{\linewidth}{|X|X|}
+            \hline
+            \begin{minipage}[c][8em][t]{0pt}\end{minipage} \space & \space \\
+            \hline
+            \rowcolor[gray]{0.8}\rowspace\centerline{Podpis (Zleceniodawca)} & \centerline{Podpis (Zleceniobiorca)} \\
+            \hline
+        \end{tabularx}
+    \end{table}
+
+
+    \newpage
+
+
+    \section*{Protokół odbioru}
+    \begin{adjustbox}{width=1\textwidth,center}
+        \begin{tabular}{ |>{\columncolor[gray]{0.8}}l|l| }
+            \hline
+            \rowspace\rownumber\space DATA ZAMÓWIENIA & \VAR{periodfrom} \\
+            \hline
+            \rowspace\rownumber\space KONTRAHENT & \VAR{contractor} (NIP: \VAR{nip}) \\
+            \hline
+            \rowspace\rownumber\space DATA ODBIORU & \VAR{periodto} \\
+            \hline
+            \rowspace\rownumber\space NUMER ZAMÓWIENIA & \VAR{ordernumber} \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+
+    \begin{adjustbox}{width=1\textwidth,center}
+        \begin{tabular}{|c|}
+            \cellcolor[gray]{0.8}\rowspace ZAKRES PRAC/USŁUG PODLEGAJĄCYCH ODBIORZE \\
+            \hline
+            \\
+            W trakcie okresu rozliczeniowego Zleceniobiorca wykonał następujące prace: \\
+            \\
+            \VAR{pivottable}
+            \\
+            \\
+            \\
+            Wynagrodzenie należne z tytułu wykonanych prac – \VAR{netamountdue} zł netto \\
+            \\
+            \hline
+        \end{tabular}
+    \end{adjustbox}
+
+    \newpage
+
+    \begin{tabularx}{\textwidth}{|X|}
+        \hline
+        \cellcolor[gray]{0.8}\rowspace \centerline{UWAGI} \\
+        \hline
+        \rowspace Brak. \\
+        \hline
+        \vspace{6em}
+        \begin{minipage}{0.49\textwidth}\centering \phantom{X} \par \dotfill \par W imieniu Zleceniodawcy \end{minipage}
+        \begin{minipage}{0.49\textwidth}\centering \VAR{contractor} \par \dotfill \par W imieniu Zleceniobiorcy \end{minipage} \par \\
+        \hline
+    \end{tabularx}
+
+\end{document}

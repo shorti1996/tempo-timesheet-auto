@@ -1,26 +1,22 @@
-from typing import Any, Callable
+import os
 
+from config.consts import pivot_table_hours_header, pivot_table_tasks_header, pivot_table_projects_header, order_number_template
+from config.report_data import contractor, nip, initials, net_amount_due
+from logic.report_maker.latexer import Latexer
+from logic.report_maker.report_data_supplier import ReportDataSupplier
+
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
 import pandas as pd
 
 from logic.atlassian.issuer import Issuer
-from logic.calendarer import get_current_day_string, str_to_date, get_months_last_day, date_to_str
+from logic.calendarer import get_current_day_string, str_to_date, get_months_last_day, date_to_str, get_months_first_day, get_months_number
 from logic.worklogs.worklog_checker import AllWorklogChecker
 
 
-def let(x: Any, block: Callable[[Any], Any]):
-    return block(x)
-
-
-def apply(x, block, *args, **kwargs):
-    block(x, *args, **kwargs)
-    return x
-
-
-def accumulate_hours(worklog):
-    ...
-
-
 class ReportMaker:
+    def __init__(self, latexer=Latexer()):
+        self.latexer = latexer
+
     def make_report_month(self, day_anchor: str = get_current_day_string()):
         month_start = str_to_date(day_anchor).replace(day=1)
         month_end = month_start.replace(day=get_months_last_day(month_start).day)
@@ -37,11 +33,25 @@ class ReportMaker:
 
         df = pd.DataFrame(accumulated_data).transpose()
         df['timeSpentSeconds'] = df['timeSpentSeconds'] / (60 * 60)
-        df = df.rename(columns={'timeSpentSeconds': 'timeSpentHours'})
+        df = df.rename(columns={'timeSpentSeconds': pivot_table_hours_header,
+                                'projectName': pivot_table_projects_header,
+                                'summary': pivot_table_tasks_header})
 
-        pivot_table = pd.pivot_table(df, values='timeSpentHours', index=['projectName', 'summary'], aggfunc=sum)
+        pivot_table_latex_str = pd.pivot_table(df, values=pivot_table_hours_header, index=[pivot_table_projects_header, pivot_table_tasks_header],
+                                               aggfunc=sum, margins=True, margins_name=pivot_table_hours_header).to_latex()
 
-        x = 0
+        supplier = ReportDataSupplier(date_to_str(get_months_first_day(str_to_date(day_anchor))),
+                                      date_to_str(get_months_last_day(str_to_date(day_anchor))),
+                                      nip,
+                                      contractor,
+                                      order_number_template % (get_months_number(str_to_date(day_anchor)), initials),
+                                      list(set(df[pivot_table_projects_header])),
+                                      net_amount_due,
+                                      pivot_table_latex_str)
+        self.render_report_latex(supplier)
+
+    def render_report_latex(self, report_data_supplier: ReportDataSupplier):
+        return self.latexer.render(**report_data_supplier.supply())
 
 
 ReportMaker().make_report_month()
