@@ -1,6 +1,7 @@
 import os
 
 from config.consts import pivot_table_hours_header, pivot_table_tasks_header, pivot_table_projects_header, order_number_template
+from config.consts import pivot_table_total_name
 from logic.report_maker.latexer import Latexer
 from logic.report_maker.report_data_supplier import ReportDataSupplier
 
@@ -63,7 +64,7 @@ class ReportMaker:
                                 'projectName': pivot_table_projects_header,
                                 'summary': pivot_table_tasks_header})
         pivot_table_latex_str = pd.pivot_table(df, values=pivot_table_hours_header, index=[pivot_table_projects_header, pivot_table_tasks_header],
-                                               aggfunc=sum, margins=True, margins_name=pivot_table_hours_header).to_latex()
+                                               aggfunc=sum, margins=True, margins_name=pivot_table_total_name).to_latex()
         return df, pivot_table_latex_str
 
     def render_report_latex(self, report_data_supplier: ReportDataSupplier):
