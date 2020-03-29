@@ -9,6 +9,8 @@ tempo_auth_header = {'Authorization': 'Bearer ' + tempo_auth_token}
 
 root_path = Path(__file__).parent.parent
 default_schedule_path = root_path / "schedule.json"
+default_report_output_path = root_path / "reports-output"
+
 default_date_format = "%Y-%m-%d"
 default_workweek_days = 5  # mon-fri
 
