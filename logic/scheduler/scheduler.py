@@ -1,6 +1,7 @@
 import json
-import re
 from typing import Optional
+
+import re
 
 from config.consts import default_schedule_path
 from config.settings import default_start_time, default_author_account_id, scheduler_post_daily_if_nothing_scheduled
@@ -22,6 +23,7 @@ class Scheduler:
         self.schedule = json.loads(self.json_str)['schedule']
 
     def get_issues_for_day(self, the_day=get_current_day_string()):
+        root_append_default_scrum = self.schedule.get('autoScrum', True)
         that_day_schedules = next(iter([day for day in self.schedule['days'] if day['date'] == the_day]), None)
         issues = []
         if that_day_schedules is not None:
@@ -29,15 +31,15 @@ class Scheduler:
                                    Scheduler.parse_duration_string_to_seconds(issue['timeSpent']),
                                    the_day,
                                    default_start_time,
-                                   issue['description'], default_author_account_id) for issue in that_day_schedules['issues']]
+                                   issue['description'],
+                                   default_author_account_id) for issue in that_day_schedules['issues']]
 
-        if len(issues) == 0 and self.post_daily_if_nothing_scheduled:  # nothing scheduled
-            if is_day_workday(str_to_date(the_day)):  # try to append daily if workday
+        forced_single_day_report_scrum = that_day_schedules is not None and 'appendDefaultScrum' in that_day_schedules
+        if forced_single_day_report_scrum:
+            if that_day_schedules.get('appendDefaultScrum', False):
                 issues.append(WorklogPost.create_with_defaults(the_day))
-        elif 'appendDefaultScrum' not in that_day_schedules \
-                or ('appendDefaultScrum' in that_day_schedules and that_day_schedules['appendDefaultScrum']):
+        elif root_append_default_scrum and self.post_daily_if_nothing_scheduled and is_day_workday(str_to_date(the_day)):
             issues.append(WorklogPost.create_with_defaults(the_day))
-
         return issues
 
     @staticmethod
