@@ -1,0 +1,59 @@
+{
+  "schedule": {
+    "autoScrum" : true,
+    "days": [
+      {
+        "date": "2020-04-01",
+        "issues": [
+          {
+            "key": "CD-XX",
+            "description": "DEV-XXX Some description",
+            "timeSpent": "7h30m"
+          }
+        ]
+      },
+      {
+        "date": "2020-03-31",
+        "appendDefaultScrum": false,
+        "issues": [
+        ]
+      },
+      {
+        "date": "2020-03-30",
+        "issues": [
+          {
+            "key": "CD-XX",
+            "description": "DEV-XXX Some description",
+            "timeSpent": "7h30m"
+          }
+        ]
+      },
+      {
+        "date": "2020-03-26",
+        "issues": [
+          {
+            "key": "CD-XX",
+            "description": "DEV-XXX Some description",
+            "timeSpent": "7h30m"
+          }
+        ]
+      },
+      {
+        "date": "2020-03-25",
+        "appendDefaultScrum": false,
+        "issues": [
+          {
+            "key": "CD-XX",
+            "description": "Daily",
+            "timeSpent": "30m"
+          },
+          {
+            "key": "CD-XX",
+            "description": "DEV-XXX Some description",
+            "timeSpent": "7h30m"
+          }
+        ]
+      }
+    ]
+  }
+}
