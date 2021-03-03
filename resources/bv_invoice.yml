@@ -1,0 +1,11 @@
+invoiceNumber: test
+supplierDataLine1: Wojciech Liebert
+supplierDataLine2: Dobra 179a/2
+supplierDataLine3: 59-700 Bolesławiec, Polska
+clientDataLine1: blue veery GmbH
+clientDataLine2: Gotzinger Str. 46 8137
+clientDataLine3: 81371 München, Niemcy
+supplierVatCode: PL6121826127
+clientVatCode: DE301666398
+description: Usługi programistyczne- \\ 02/2021
+netPrice: 100,00

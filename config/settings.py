@@ -1,3 +1,6 @@
+import os
+from pathlib import Path
+
 from config.secrets import author_id_myself
 
 default_scrum_issue_key = "CD-12"  # Scrum
@@ -7,3 +10,5 @@ default_description = "Daily"
 default_author_account_id = author_id_myself
 
 scheduler_post_daily_if_nothing_scheduled = True
+
+template_files_path = Path(os.path.abspath(__file__)).parent.parent / 'resources'

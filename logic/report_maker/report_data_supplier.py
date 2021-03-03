@@ -1,8 +1,10 @@
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
+
+from logic.template_data_supplier import TemplateDataSupplier
 
 
 @dataclass
-class ReportDataSupplier:
+class ReportDataSupplier(TemplateDataSupplier):
     periodfrom: str
     periodto: str
     nip: str
@@ -21,6 +23,3 @@ class ReportDataSupplier:
         self.orderscope = order_scope
         self.netamountdue = net_amount_due
         self.pivottable = pivot_table
-
-    def supply(self):
-        return asdict(self)
