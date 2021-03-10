@@ -12,6 +12,7 @@ default_schedule_path = root_path / "schedule.json"
 default_report_output_path = root_path / "reports-output"
 
 default_date_format = "%Y-%m-%d"
+month_only_date_format = "%Y-%m"
 default_workweek_days = 5  # mon-fri
 
 atlassian_api_url = 'https://jojomobile.atlassian.net/rest/api/2/'

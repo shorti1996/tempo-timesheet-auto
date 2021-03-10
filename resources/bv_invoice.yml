@@ -1,4 +1,4 @@
-invoiceNumber: test
+invoiceNumber: 001
 supplierDataLine1: Wojciech Liebert
 supplierDataLine2: Dobra 179a/2
 supplierDataLine3: 59-700 Bolesławiec, Polska
@@ -8,4 +8,7 @@ clientDataLine3: 81371 München, Niemcy
 supplierVatCode: PL6121826127
 clientVatCode: DE301666398
 description: Usługi programistyczne- \\ 02/2021
-netPrice: 100,00
+netPrice: 100.00
+invoiceMonth: 2020-02
+bankAccountNumber: 0123 1201312 01231231 120
+bicSwiftCode: INGPL
