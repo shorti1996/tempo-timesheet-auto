@@ -37,7 +37,10 @@ def load_invoice_yml(file: str) -> InvoiceDataYmlSupplier:
 @dataclass_json(letter_case=LetterCase.CAMEL)
 @dataclass
 class InvoiceDataCompleteSupplier(InvoiceDataYmlSupplier):
+    transaction_date: Optional[str] = None
     vat_price: Optional[str] = None
+    vat_amount: Optional[str] = None
+    net_amount: Optional[str] = None
     gross_amount: Optional[str] = None
     gross_amount_words_en: Optional[str] = None
     gross_amount_words_pl: Optional[str] = None

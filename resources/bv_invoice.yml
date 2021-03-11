@@ -8,7 +8,7 @@ clientDataLine3: 81371 München, Niemcy
 supplierVatCode: PL6121826127
 clientVatCode: DE301666398
 description: Usługi programistyczne- \\ 02/2021
-netPrice: 100.00
-invoiceMonth: 2020-02
+netPrice: 1234.56
+invoiceMonth: 2021-03
 bankAccountNumber: 0123 1201312 01231231 120
 bicSwiftCode: INGPL
