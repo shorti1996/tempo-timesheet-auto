@@ -1,0 +1,17 @@
+# You want to change these every month
+invoiceMonth: 2021-03
+netPrice: 1234.56
+
+# These stay the same
+invoiceNumber: '001'
+supplierDataLine1: Jan Kowalski
+supplierDataLine2: Twój adres 12/3b
+supplierDataLine3: 01-234 Wąchock, Polska
+clientDataLine1: blue veery GmbH
+clientDataLine2: Gotzinger Str. 46 8137
+clientDataLine3: 81371 München, Niemcy
+supplierVatCode: PL4569987 twój NIP
+clientVatCode: DE301666398
+description: Usługi programistyczne-
+bankAccountNumber: '0123 1201312 01231231 120'
+bicSwiftCode: BIC SWIFT twojego banku
