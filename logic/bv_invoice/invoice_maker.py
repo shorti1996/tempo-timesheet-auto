@@ -3,8 +3,7 @@ from pathlib import Path
 
 from num2words import num2words
 
-from config.consts import month_only_date_format, default_date_format, root_path, tex_files_output_path
-from config.settings import template_files_path
+from config.consts import month_only_date_format, default_date_format, root_path, tex_files_output_path, template_files_path
 from logic.bv_invoice.invoice_data_supplier import InvoiceDataYmlSupplier, load_invoice_yml, InvoiceDataCompleteSupplier
 from logic.calendarer import str_to_date, get_months_first_day, get_months_last_day
 from logic.report_maker.latexer import Latexer
@@ -13,6 +12,7 @@ from logic.report_maker.latexer import Latexer
 class InvoiceMaker:
     price_format = "{:,.2f}"
     decimals_only_format = "{:.2f}"
+    month_year_format = '%m/%Y'
 
     def __init__(self, file_name: str = 'bv_invoice'):
         self.file_name = file_name
@@ -37,8 +37,9 @@ class InvoiceMaker:
         invoice_data.gross_amount_hundredths = get_round_decimal_places(float(gross_amount))
         invoice_data.invoice_date = date.strftime(months_first_day, default_date_format)
         invoice_data.payment_due = date.strftime(payment_due, default_date_format)
-        invoice_data.invoice_number = f"001/{date.strftime(months_first_day, '%m/%Y')}"
+        invoice_data.invoice_number = f"{invoice_yml.invoice_number}/{date.strftime(months_first_day, InvoiceMaker.month_year_format)}"
         invoice_data.transaction_date = date.strftime(get_months_last_day(months_first_day), default_date_format)
+        invoice_data.description = f"{invoice_yml.description} \\\\ {date.strftime(months_first_day, InvoiceMaker.month_year_format)}"
         return invoice_data
 
     def render_template_latex(self, invoice_data_supplier: InvoiceDataYmlSupplier):

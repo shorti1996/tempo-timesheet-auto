@@ -23,7 +23,7 @@ class InvoiceDataYmlSupplier(TemplateDataSupplier):
     invoice_month: str
     bank_account_number: str
     bic_swift_code: str
-    invoice_number: Optional[str] = None
+    invoice_number: str
 
 
 def load_invoice_yml(file: str) -> InvoiceDataYmlSupplier:

@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+  latexer:
+    build:
+      context: ../
+      dockerfile: dockerfiles/latexer.dockerfile
+    volumes:
+      - ../output/:/shared
+    environment:
+      - FILENAME=bv_invoice
+    depends_on:
+      - pythoner
+
+  pythoner:
+    build:
+      context: ../
+      dockerfile: dockerfiles/pythoner.dockerfile
+    volumes:
+      - ../input/:/app/resources
+      - ../output/:/shared
+    environment:
+      - FILENAME=bv_invoice

@@ -11,6 +11,7 @@ root_path = Path(__file__).parent.parent
 default_schedule_path = root_path / "schedule.json"
 default_report_output_path = root_path / "reports-output"
 tex_files_output_path = Path(root_path / "output")
+template_files_path = root_path / 'resources'
 
 default_date_format = "%Y-%m-%d"
 month_only_date_format = "%Y-%m"

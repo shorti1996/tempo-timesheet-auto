@@ -11,4 +11,3 @@ default_author_account_id = author_id_myself
 
 scheduler_post_daily_if_nothing_scheduled = True
 
-template_files_path = Path(os.path.abspath(__file__)).parent.parent / 'resources'
