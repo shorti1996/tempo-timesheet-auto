@@ -2,7 +2,7 @@ version: "3.5"
 
 services:
   latexer:
-    image: docker-repository.bv-soft.pl/latexer:latest
+    image: harbor.bv-soft.pl/bv-invoice/latexer:latest
     volumes:
       - ../output/:/shared
     environment:
@@ -11,7 +11,7 @@ services:
       - pythoner
 
   pythoner:
-    image: docker-repository.bv-soft.pl/pythoner:latest
+    image: harbor.bv-soft.pl/bv-invoice/pythoner:latest
     volumes:
       - ../input/:/app/resources
       - ../output/:/shared
