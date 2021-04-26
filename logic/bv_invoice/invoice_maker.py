@@ -1,6 +1,7 @@
 from datetime import date
 from pathlib import Path
 
+from dateutil.relativedelta import relativedelta
 from num2words import num2words
 
 from config.consts import month_only_date_format, default_date_format, root_path, tex_files_output_path, template_files_path
@@ -25,7 +26,8 @@ class InvoiceMaker:
         gross_amount = float(invoice_data.net_price)
         net_price = float(invoice_data.net_price)
         months_first_day = get_months_first_day(str_to_date(invoice_data.invoice_month, month_only_date_format))
-        payment_due = str_to_date(f"{invoice_data.invoice_month}-14")
+        months_last_day = get_months_last_day(months_first_day)
+        payment_due = months_first_day + relativedelta(days=13, months=1)
 
         invoice_data.vat_price = format_price(0.0)
         invoice_data.vat_amount = format_price(0.0)
@@ -35,10 +37,10 @@ class InvoiceMaker:
         invoice_data.gross_amount_words_en = num2words(int(gross_amount))
         invoice_data.gross_amount_words_pl = num2words(int(gross_amount), lang='pl')
         invoice_data.gross_amount_hundredths = get_round_decimal_places(float(gross_amount))
-        invoice_data.invoice_date = date.strftime(months_first_day, default_date_format)
+        invoice_data.invoice_date = date.strftime(months_last_day, default_date_format)
         invoice_data.payment_due = date.strftime(payment_due, default_date_format)
         invoice_data.invoice_number = f"{invoice_yml.invoice_number}/{date.strftime(months_first_day, InvoiceMaker.month_year_format)}"
-        invoice_data.transaction_date = date.strftime(get_months_last_day(months_first_day), default_date_format)
+        invoice_data.transaction_date = date.strftime(months_last_day, default_date_format)
         invoice_data.description = f"{invoice_yml.description} \\\\ {date.strftime(months_first_day, InvoiceMaker.month_year_format)}"
         return invoice_data
 
