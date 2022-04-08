@@ -1,0 +1,145 @@
+\listfiles
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{adjustbox}
+\usepackage[table]{xcolor}
+% \usepackage{tabu}
+\usepackage{tabularx}
+\usepackage{makecell}
+\usepackage{booktabs}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{array,multirow}
+\usepackage{multicol}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    top=40mm,
+    bottom=40mm,
+    left=20mm,
+    right=20mm,
+    headheight=50pt,
+    headsep=40pt,
+}
+\usepackage{array,etoolbox}
+\preto\tabular{\setcounter{magicrownumbers}{0}}
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+
+\pagestyle{fancy}
+\pagestyle{fancy}
+\fancyhf{} % sets both header and footer to nothing
+\renewcommand{\headrulewidth}{0pt}
+
+
+\titleformat
+{\section} % command
+[block] % shape
+{\bfseries\Large\normalfont} % format
+{\thesection } % label
+{0.5ex} % sep
+{
+    \centering
+    \uppercase
+} % before-code
+
+\titlespacing{\section}{12pc}{1.5ex plus .1ex minus .2ex}{1pc}
+
+\newcommand{\bsgpipe}{
+    \textbf{\textcolor{red}{|}}
+}
+
+\newcommand{\rowspace}{
+    \begin{minipage}[c][2em][t]{0pt}\end{minipage}
+}
+
+\newcommand{\VAR}[1]{
+    \textbf{\textcolor{red}{#1}}
+}
+
+\begin{document}
+
+    \newpage
+
+    \begin{flushright}
+        \textbf{Invoice No.} / faktura nr: \\
+        \VAR{invoiceNumber} \\
+        \vspace{0.5em}
+        \textbf{Invoice date} / data wystawienia: \\
+        \VAR{invoiceDate} \\
+        \vspace{0.5em}
+        \textbf{Transaction date} / data wydania towaru lub wykonania usługi: \\
+        \VAR{transactionDate} \\
+    \end{flushright}
+
+    \vspace{1em}
+
+    % \begin{adjustbox}{width=1\textwidth,center}
+    \begin{center}
+        \begin{tabular}{l l}
+        \textbf{Supplier} / wystawca: & \textbf{Client} / nabywca: \\
+        \\
+        \VAR{supplierDataLine1} & \VAR{clientDataLine1} \\
+        \VAR{supplierDataLine2} & \VAR{clientDataLine2} \\
+        \VAR{supplierDataLine3} & \VAR{clientDataLine3} \\
+        \\
+        \textbf{VAT code} / NIP: \VAR{supplierVatCode} & \textbf{VAT code} / NIP: \VAR{clientVatCode}
+        \end{tabular}
+    \end{center}
+    % \end{adjustbox}
+
+    \vspace{2em}
+
+    % \renewcommand\theadalign{bc}
+    % \renewcommand\theadfont{\bfseries}
+    % \renewcommand\theadgape{\Gape[4pt]}
+    \renewcommand\cellgape{\Gape[4pt]}
+
+    \begin{adjustbox}{width=1\textwidth,center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+          \hline
+          \thead{\textbf{No.} \\ L.p.} & \thead{\textbf{Description} \\ Opis} & \thead{\textbf{Net price} \\ Cena netto} & \thead{\textbf{Q-ty} \\ Ilość} & \thead{\textbf{Unit} \\ Jedn.} & \thead{\textbf{Net amount} \\ Wartość netto} & \thead{\textbf{VAT\%}} & \thead{\textbf{VAT amount} \\ Wartość netto} & \thead{\textbf{Gross amount} \\ Wartość brutto} \\
+          \hline
+          \makecell{1} & \makecell[l]{\VAR{description}}  & \makecell{\VAR{netPrice}} & \makecell{1} & \makecell{usł.} & \makecell{\VAR{netAmount}} & \makecell{NP} & \makecell{\VAR{vatAmount}} & \makecell{\VAR{grossAmount}} \\
+          \hline
+          \multicolumn{3}{l}{} & \makecell{} & \makecell{\textbf{Total:} \\ Razem:} & \makecell{\VAR{netAmount}}  & \makecell{---} & \makecell{\VAR{vatAmount}} & \makecell{\VAR{grossAmount}} \\
+          \cline{5-9}
+          \multicolumn{3}{l}{} & \makecell{} & \makecell{\textbf{Subtotal:} \\ W tym: (PLN)} & \makecell{\VAR{netAmount}}  & \makecell{NP} & \makecell{\VAR{vatAmount}} & \makecell{\VAR{grossAmount}} \\
+          \cline{5-9}
+        \end{tabular}
+    \end{adjustbox}
+
+    \renewcommand\cellgape{\Gape[1pt]}
+    \begin{flushright}
+        \vspace{3em}
+        % \begin{adjustbox}{width=1\textwidth,center}
+            \begin{tabular}{|l|r|}
+              \hline
+              \makecell[l]{\textbf{Total amount due} / do zapłaty:} & \makecell[r]{\VAR{grossAmount} PLN} \\
+              \hline
+              \makecell[l]{\textbf{In words:}} & \makecell[r]{\VAR{grossAmountWordsEn} \VAR{grossAmountHundredths}/100 PLN} \\
+              \hline
+              \makecell[l]{Słownie:} & \makecell[r]{\VAR{grossAmountWordsPl} \VAR{grossAmountHundredths}/100 PLN} \\
+              \hline
+              \makecell[l]{\textbf{Payment by} / sposób zapłaty:} & \makecell[r]{transfer/ przelew} \\
+              \hline
+              \makecell[l]{\textbf{Payment due by} / termin:} & \makecell[r]{\VAR{paymentDue}} \\
+              \hline
+              \makecell[l]{\textbf{Our bank account} / rachunek:} & \makecell[r]{\VAR{bankAccountNumber}} \\
+              \hline
+              \makecell[l]{\textbf{BIC / SWIFT}} & \makecell[r]{\VAR{bicSwiftCode}} \\
+              \hline
+            \end{tabular}
+        % \end{adjustbox}
+    \end{flushright}
+
+    \vspace{1em}
+    \noindent \textbf{Reverse charge} / odwrotne obciążenie \\
+    \textbf{Comments} / uwagi:
+
+\end{document}

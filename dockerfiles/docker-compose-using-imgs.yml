@@ -1,0 +1,23 @@
+# Build images first!
+# docker build -f pythoner.dockerfile -t shorti1996/pythoner:latest ../
+# docker build -f latexer.dockerfile -t shorti1996/latexer:latest ../
+
+version: "3.9"
+
+services:
+  latexer:
+    image: shorti1996/latexer:latest
+    volumes:
+      - ../output/:/shared
+    environment:
+      - FILENAME=bv_invoice
+    depends_on:
+      - pythoner
+
+  pythoner:
+    image: shorti1996/pythoner:latest
+    volumes:
+      - ../input/:/app/resources
+      - ../output/:/shared
+    environment:
+      - FILENAME=bv_invoice

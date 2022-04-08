@@ -4,6 +4,7 @@ from datetime import datetime
 from pathlib import Path
 from unittest.mock import MagicMock
 
+from config.secrets import tempo_auth_token
 from logic.worklogs.worklog_checker import ScrumWorklogChecker
 from logic.worklogs.worklog_creator import ScrumWorklogCreator
 from logic.worklogs.worklog_manager import ScrumWorklogManager
@@ -13,9 +14,9 @@ from model.worklog import WorklogPost
 def prepare_worklog_manager():
     with open(Path(__file__).parent / 'response.json', 'r') as file:
         response_str = file.read()
-    worklog_checker = ScrumWorklogChecker()
+    worklog_checker = ScrumWorklogChecker(tempo_auth_token)
     worklog_checker.get_worklogs = lambda: json.loads(response_str)["results"]
-    worklog_manager = ScrumWorklogManager(worklog_checker, ScrumWorklogCreator())
+    worklog_manager = ScrumWorklogManager(tempo_auth_token, worklog_checker, ScrumWorklogCreator())
     ScrumWorklogManager.post_issues = lambda self, issues: None
     return worklog_manager
 

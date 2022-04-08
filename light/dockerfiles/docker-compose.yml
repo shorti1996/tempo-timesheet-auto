@@ -1,0 +1,19 @@
+version: "3.5"
+
+services:
+  latexer:
+    image: harbor.bv-soft.pl/bv-invoice/latexer:latest
+    volumes:
+      - ../output/:/shared
+    environment:
+      - FILENAME=bv_invoice
+    depends_on:
+      - pythoner
+
+  pythoner:
+    image: harbor.bv-soft.pl/bv-invoice/pythoner:latest
+    volumes:
+      - ../input/:/app/resources
+      - ../output/:/shared
+    environment:
+      - FILENAME=bv_invoice
