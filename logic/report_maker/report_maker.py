@@ -32,7 +32,7 @@ class ReportMaker:
         month_start = get_months_first_day(str_to_date(day_anchor))
         month_end = get_months_last_day(str_to_date(day_anchor))
         report_tex_string = self.make_report_tex_string(month_start, month_end)
-        pdf_path = self.latexer.create_pdf(report_tex_string)
+        pdf_path = Latexer.create_pdf(report_tex_string)
         return pdf_path
 
     def make_report_tex_string(self, period_start, period_end):

@@ -1,4 +1,9 @@
 FROM pandoc/latex:latest as latexer
 RUN tlmgr update --self
 RUN tlmgr install titlesec adjustbox collectbox makecell multirow
-ENTRYPOINT while [ ! -f /shared/${FILENAME}.tex ]; do echo "Waiting for .tex file to be generated"; sleep 1; done; pdflatex /shared/${FILENAME}.tex; cp ${FILENAME}.pdf /shared/
+RUN apk add inotify-tools
+WORKDIR /app
+COPY ./scripts/file_watcher.sh .
+# EMPTY VARIABLE
+ENV SERVER ${1:+1}
+ENTRYPOINT /app/file_watcher.sh $SERVER

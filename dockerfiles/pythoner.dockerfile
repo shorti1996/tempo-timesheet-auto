@@ -5,4 +5,8 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
-CMD rm -r /shared/*; python bv_invoice_tex_builder.py -i ${FILENAME} -o /shared/${FILENAME}.tex
+CMD mkdir /shared
+ENV FILENAME bv_invoice
+# EMPTY VARIABLE
+ENV SERVER ${1:+1}
+CMD rm -r /shared/*; python bv_invoice_tex_builder.py $SERVER -i "${FILENAME}" -o /shared/"${FILENAME}.tex"
