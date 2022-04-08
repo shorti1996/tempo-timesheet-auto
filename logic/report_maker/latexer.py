@@ -1,7 +1,6 @@
 import os
 import subprocess
 from pathlib import Path
-from typing import Union
 
 import jinja2
 
@@ -29,7 +28,8 @@ class Latexer:
     def render_template(self, **kwargs):
         return self.template.render(**kwargs)
 
-    def create_pdf(self, tex_string, output_dir=default_report_output_path, output_filename="output"):
+    @staticmethod
+    def create_pdf(tex_string, output_dir=default_report_output_path, output_filename="output"):
         p = subprocess.run([pdflatex_install_location, '-jobname', output_filename, '-output-directory', output_dir],
                            stdout=subprocess.PIPE, input=tex_string, encoding='utf-8')
         print(p.stdout)
