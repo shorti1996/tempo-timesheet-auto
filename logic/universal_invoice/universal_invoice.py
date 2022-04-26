@@ -2,7 +2,7 @@ from pathlib import Path
 from typing import Union, Dict
 
 from config.consts import root_path, template_files_path
-from logic.flask_app.latex_escaper import tex_escape
+from logic.flask_app.latex_escaper import tex_escape_recursive
 from logic.report_maker.latexer import Latexer
 from logic.template_data_supplier import TemplateDataSupplier
 
@@ -17,7 +17,7 @@ class InvoiceMaker:
         if isinstance(invoice_data_supplier, TemplateDataSupplier):
             data_dict = invoice_data_supplier.supply()
         else:
-            data_dict = {key: tex_escape(value) for key, value in invoice_data_supplier.items()}
+            data_dict = tex_escape_recursive(invoice_data_supplier)
         return self.latexer.render_template(**data_dict)
 
     @staticmethod
