@@ -5,5 +5,5 @@ RUN apk add inotify-tools
 WORKDIR /app
 COPY ./scripts/file_watcher.sh .
 # EMPTY VARIABLE
-ENV SERVER ${1:+1}
+ARG SERVER
 ENTRYPOINT /app/file_watcher.sh $SERVER

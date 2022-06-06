@@ -13,6 +13,7 @@ default_report_output_path = root_path / "reports-output"
 tex_files_output_path = Path(root_path / "output")
 template_files_path = root_path / 'resources'
 shared_path = Path("/shared")
+# shared_path = root_path / "shared"
 
 default_date_format = "%Y-%m-%d"
 month_only_date_format = "%Y-%m"

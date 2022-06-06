@@ -11,6 +11,7 @@ num2words~=0.5.10
 numpy==1.18.2
 pandas==1.0.3
 pydevd-pycharm~=213.6777.52
+pyinotify~=0.9.6
 python-dateutil==2.8.1
 pytz==2019.3
 requests==2.23.0

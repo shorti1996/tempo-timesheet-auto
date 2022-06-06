@@ -36,7 +36,7 @@ def walk(node: Dict, function: Callable):
 
     result = {}
     for key, item in node.items():
-        result[key] = helper(key)
+        result[key] = helper(item)
     return result
 
 

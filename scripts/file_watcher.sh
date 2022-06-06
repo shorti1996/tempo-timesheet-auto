@@ -10,7 +10,7 @@ inotifywait -m /shared/ -e create -e moved_to |
         if [ "$extension" = "tex" ]; then
             pdflatex -interaction=nonstopmode /shared/"${file}"
         fi
-        if [ "${1:-0}" -eq 0 ]; then
+        if [ "${1:-0}" = "0" ]; then
             kill -SIGINT -$$
         fi
     done

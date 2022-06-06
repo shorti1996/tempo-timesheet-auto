@@ -8,5 +8,5 @@ COPY . .
 CMD mkdir /shared
 ENV FILENAME bv_invoice
 # EMPTY VARIABLE
-ENV SERVER ${1:+1}
+ARG SERVER
 CMD rm -r /shared/*; python bv_invoice_tex_builder.py $SERVER -i "${FILENAME}" -o /shared/"${FILENAME}.tex"
