@@ -4,7 +4,9 @@ WORKDIR /app
 # our installed requirements rather than reinstall them on every build
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY . .
+COPY config/ ./config
+COPY bv_invoice_tex_builder.py .
+COPY logic/ ./logic
 CMD mkdir /shared
 ENV FILENAME bv_invoice
 # EMPTY VARIABLE

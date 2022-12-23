@@ -11,8 +11,6 @@ services:
       - ../output/:/shared
     environment:
       - FILENAME=bv_invoice
-    depends_on:
-      - pythoner
 
   pythoner:
     image: shorti1996/pythoner:latest
@@ -21,3 +19,5 @@ services:
       - ../output/:/shared
     environment:
       - FILENAME=bv_invoice
+    depends_on:
+      - latexer

@@ -23,9 +23,17 @@ class BlueVeeryInvoiceMaker(InvoiceMaker):
 
         gross_amount = float(invoice_data.net_price)
         net_price = float(invoice_data.net_price)
-        months_first_day = get_months_first_day(str_to_date(invoice_data.invoice_month, month_only_date_format))
-        months_last_day = get_months_last_day(months_first_day)
-        payment_due = months_first_day + relativedelta(days=13, months=1)
+        if invoice_data.invoice_date is None and invoice_data.invoice_month is not None:
+            months_first_day = get_months_first_day(str_to_date(invoice_data.invoice_month, month_only_date_format))
+            months_last_day = get_months_last_day(months_first_day)
+            invoice_date = months_last_day
+        elif invoice_data.invoice_date is not None and invoice_data.invoice_month is None:
+            months_first_day = get_months_first_day(str_to_date(str(invoice_data.invoice_date), default_date_format))
+            months_last_day = get_months_last_day(months_first_day)
+            invoice_date = str_to_date(str(invoice_data.invoice_date), default_date_format)
+        else:
+            raise RuntimeError("invoiceDate or invoiceMonth is mandatory")
+        payment_due = invoice_date + relativedelta(days=13)
 
         invoice_data.vat_price = format_price(0.0)
         invoice_data.vat_amount = format_price(0.0)
@@ -35,7 +43,7 @@ class BlueVeeryInvoiceMaker(InvoiceMaker):
         invoice_data.gross_amount_words_en = num2words(int(gross_amount))
         invoice_data.gross_amount_words_pl = num2words(int(gross_amount), lang='pl')
         invoice_data.gross_amount_hundredths = get_round_decimal_places(float(gross_amount))
-        invoice_data.invoice_date = date.strftime(months_last_day, default_date_format)
+        invoice_data.invoice_date = date.strftime(invoice_date, default_date_format)
         invoice_data.payment_due = date.strftime(payment_due, default_date_format)
         invoice_data.invoice_number = f"{invoice_yml.invoice_number}/{date.strftime(months_first_day, BlueVeeryInvoiceMaker.month_year_format)}"
         invoice_data.transaction_date = date.strftime(months_last_day, default_date_format)

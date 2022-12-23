@@ -9,8 +9,6 @@ services:
       - ../output/:/shared
     environment:
       - FILENAME=bv_invoice
-    depends_on:
-      - pythoner
 
   pythoner:
     build:
@@ -21,3 +19,5 @@ services:
       - ../output/:/shared
     environment:
       - FILENAME=bv_invoice
+    depends_on:
+      - latexer
