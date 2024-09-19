@@ -7,7 +7,7 @@ RUN pip install -r requirements.txt
 COPY config/ ./config
 COPY bv_invoice_tex_builder.py .
 COPY logic/ ./logic
-CMD mkdir /shared
+RUN mkdir -p /shared
 ENV FILENAME bv_invoice
 # EMPTY VARIABLE
 ARG SERVER

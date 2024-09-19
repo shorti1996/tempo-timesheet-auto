@@ -22,7 +22,8 @@ class InvoiceDataYmlSupplier(TemplateDataSupplier):
     net_price: str
     bank_account_number: str
     bic_swift_code: str
-    invoice_number: str
+    invoice_number: Optional[str] = None
+    invoice_number_signature: Optional[str] = None
     invoice_month: Optional[str] = None
     invoice_date: Optional[str] = None
 

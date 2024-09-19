@@ -45,7 +45,10 @@ class BlueVeeryInvoiceMaker(InvoiceMaker):
         invoice_data.gross_amount_hundredths = get_round_decimal_places(float(gross_amount))
         invoice_data.invoice_date = date.strftime(invoice_date, default_date_format)
         invoice_data.payment_due = date.strftime(payment_due, default_date_format)
-        invoice_data.invoice_number = f"{invoice_yml.invoice_number}/{date.strftime(months_first_day, BlueVeeryInvoiceMaker.month_year_format)}"
+        if invoice_data.invoice_number is not None:
+            invoice_data.invoice_number = f"{invoice_yml.invoice_number}/{date.strftime(months_first_day, BlueVeeryInvoiceMaker.month_year_format)}"
+        else:
+            invoice_data.invoice_number = invoice_data.invoice_number_signature
         invoice_data.transaction_date = date.strftime(months_last_day, default_date_format)
         invoice_data.description = f"{invoice_yml.description} \\\\ {date.strftime(months_first_day, BlueVeeryInvoiceMaker.month_year_format)}"
         return invoice_data
