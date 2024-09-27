@@ -1,0 +1,36 @@
+# Build images first!
+# docker build -f pythoner.dockerfile -t shorti1996/pythoner:latest ../
+# docker build -f latexer.dockerfile -t shorti1996/latexer:latest ../
+
+version: "3.9"
+
+services:
+  latexer:
+    build:
+      context: ../
+      dockerfile: dockerfiles/latexer.dockerfile
+#    image: harbor.bv-soft.pl/bv-invoice/latexer:latest
+    restart: unless-stopped
+    volumes:
+      - ../output/:/shared
+    environment:
+      - SERVER=--server
+
+  pythoner:
+    build:
+      context: ../
+      dockerfile: dockerfiles/pythoner.dockerfile
+#    image: harbor.bv-soft.pl/bv-invoice/pythoner:latest
+    restart: unless-stopped
+    volumes:
+      - ../input/:/app/resources
+      - ../output/:/shared
+    ports:
+      - "8282:8282"
+## For debugging:
+#    extra_hosts:
+#      - "host.docker.internal:host-gateway"
+    environment:
+      - SERVER=--server
+    depends_on:
+      - latexer

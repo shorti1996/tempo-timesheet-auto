@@ -1,8 +1,9 @@
 import json
-from abc import abstractmethod
 from typing import Optional
 
-from api_web import tempo_requests
+from abc import abstractmethod
+
+from api_web.tempo_requests import TempoRequest
 from config.consts import tempo_api_url_worklogs, default_workweek_days
 from config.settings import default_scrum_issue_key
 from logic.calendarer import get_current_day, get_week_days_str, date_to_str
@@ -14,13 +15,16 @@ class WorklogChecker:
     def filter_predicate(self):
         ...
 
+    def __init__(self, tempo_api_key):
+        self.tempo_request = TempoRequest(tempo_api_key)
+
     def get_worklogs(self, day_from: Optional[str] = None, day_to: Optional[str] = None, limit: int = 1000):
         params = {'limit': limit}
         if day_from is not None:
             params['from'] = day_from
         if day_to is not None:
             params['to'] = day_to
-        response = tempo_requests.get(tempo_api_url_worklogs, params=params)
+        response = self.tempo_request.get(tempo_api_url_worklogs, params=params)
         results = json.loads(response.content)["results"]
         return results
 

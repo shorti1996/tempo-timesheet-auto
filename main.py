@@ -1,8 +1,9 @@
 import argparse
 
-from logic.atlassian.issuer import Issuer
+from config.secrets import tempo_auth_token
 from logic.calendarer import get_current_day_string, str_to_date
 from logic.scheduler.scheduler import Scheduler
+from logic.worklogs.worklog_checker import WorklogChecker
 from logic.worklogs.worklog_manager import ScrumWorklogManager, WorklogManager
 
 parser = argparse.ArgumentParser(description='Fill tempo with daily. Daily.')
@@ -30,16 +31,17 @@ if scheduler_mode and report_mode:
     exit(-1)
 
 if report_mode:
-    Issuer.get_issue('CD-12')
+    # Issuer.get_issue('CD-12')
+    ...
 elif scheduler_mode:
     if args.scheduler_message and len(args.scheduler_message[0]) > 0:
         print(args.scheduler_message[0])
     scheduler = Scheduler()
     scheduler.load_schedule_from_file()
     issues_for_day = scheduler.get_issues_for_day(args.day[0])
-    WorklogManager(list_only=bool(args.list)).post_issues(issues_for_day)
+    WorklogManager(tempo_auth_token, list_only=bool(args.list)).post_issues(issues_for_day)
 else:
-    worklog_manager = ScrumWorklogManager(list_only=bool(args.list))
+    worklog_manager = ScrumWorklogManager(tempo_auth_token, WorklogChecker(tempo_auth_token), list_only=bool(args.list))
     if args.action == 'day':
         worklog_manager.fill_missing_scrum_for_day(day)
     elif args.action == 'week':

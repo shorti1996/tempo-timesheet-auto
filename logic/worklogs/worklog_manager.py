@@ -1,13 +1,13 @@
-from api_web import tempo_requests
+from api_web.tempo_requests import TempoRequest
 from config.consts import tempo_api_url_worklogs, default_workweek_days
 from logic.calendarer import get_current_day, str_to_date, get_workweek_days_str, days_difference_from_week_start, \
     date_to_str, is_day_workday
-from logic.worklogs.worklog_checker import ScrumWorklogChecker
 from logic.worklogs.worklog_creator import ScrumWorklogCreator
 
 
 class WorklogManager:
-    def __init__(self, list_only=False, print_on_post=True):
+    def __init__(self, tempo_api_token: str, list_only=False, print_on_post=True):
+        self.tempo_request = TempoRequest(tempo_api_token)
         self.list_only = list_only
         self.print_on_post = print_on_post
 
@@ -15,7 +15,7 @@ class WorklogManager:
         def post_issue(issue):
             if self.print_on_post:
                 print("post:\n" + str(issue.create_dict()))
-            tempo_requests.post(tempo_api_url_worklogs, json=issue.create_dict())
+            self.tempo_request.post(tempo_api_url_worklogs, json=issue.create_dict())
 
         if not self.list_only:
             if isinstance(issues, list):
@@ -29,8 +29,8 @@ class WorklogManager:
 
 
 class ScrumWorklogManager(WorklogManager):
-    def __init__(self, worklog_checker=ScrumWorklogChecker(), worklog_creator=ScrumWorklogCreator(), list_only=False):
-        super().__init__(list_only)
+    def __init__(self, tempo_api_token: str, worklog_checker, worklog_creator=ScrumWorklogCreator(), list_only=False):
+        super().__init__(tempo_api_token, list_only)
         self.worklog_checker = worklog_checker
         self.worklog_creator = worklog_creator
         self.list_only = list_only
